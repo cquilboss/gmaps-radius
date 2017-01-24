@@ -113,8 +113,8 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
       unitKey = $('option', select).eq(select[0].selectedIndex).val();
       radius = parseFloat(document.getElementById('radiusInput').value);
       radius = (radius / earthRadii[unitKey]) * earthRadii['mt'];
-      console.log('Lat: '+e.latLng.lat()+ ' Lng: '+e.latLng.lng());
-      document.getElementById('message').innerHTML = 'Lat: '+e.latLng.lat()+ ' Lng: '+e.latLng.lng();
+      console.log('Lat,Lng: '+e.latLng.lat()+ ','+e.latLng.lng());
+      document.getElementById('message').innerHTML = 'Lat,Lng: '+e.latLng.lat()+ ','+e.latLng.lng();
       circle = new google.maps.Circle({
         center: e.latLng,
         clickable: true,
