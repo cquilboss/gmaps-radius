@@ -70,7 +70,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
     markers = [];
     map = new google.maps.Map($('#map')[0], {
       zoom: 10,
-      center: new google.maps.LatLng(51.500358, -0.125506),
+      center: new google.maps.LatLng(25.7730, -80.1936),
       mapType: google.maps.MapTypeId.ROADMAP,
       disableDefaultUI: true,
       mapTypeControl: true,
@@ -113,6 +113,8 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
       unitKey = $('option', select).eq(select[0].selectedIndex).val();
       radius = parseFloat(document.getElementById('radiusInput').value);
       radius = (radius / earthRadii[unitKey]) * earthRadii['mt'];
+      console.log('Lat: '+e.latLng.lat()+ ' Lng: '+e.latLng.lng());
+      document.getElementById('message').innerHTML = 'Lat: '+e.latLng.lat()+ ' Lng: '+e.latLng.lng();
       circle = new google.maps.Circle({
         center: e.latLng,
         clickable: true,
@@ -150,7 +152,6 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
         } else {
           map.setCenter(location.geometry.location);
         }
-        console.log(location.geometry.location);
         markers.push(new google.maps.Marker({
           position: location.geometry.location,
           map: map,
