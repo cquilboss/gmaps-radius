@@ -150,6 +150,7 @@ l=h.substring(0,l.length)!==l?g(""):new g(h.substring(l.length)),l._parentURI=th
         } else {
           map.setCenter(location.geometry.location);
         }
+        console.log(location.geometry.location);
         markers.push(new google.maps.Marker({
           position: location.geometry.location,
           map: map,
